@@ -1,0 +1,210 @@
+.header {
+    backdrop-filter: saturate(180%) blur(5px);
+    background-color: transparent;
+    border-bottom: 1px solid var(--decorative-line-color);
+    color: var(--main-color);
+    left: 0;
+    position: sticky;
+    right: 0;
+    top: 0;
+    z-index: 15;
+
+    &__inner {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+    }
+
+    &__nav {
+        height: 100%;
+    }
+
+    &__nav-list {
+        column-gap: 24px;
+        display: flex;
+        font-size: 20px;
+        height: 100%;
+        justify-content: space-between;
+        line-height: 30px;
+    }
+
+    &__nav-item {
+        text-transform: capitalize;
+    }
+
+    &__nav-link {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    &__nav-link::before {
+        content: '';
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        background-color: var(--main-color);
+        transition:
+            transform var(--transition-time) ease,
+            opacity 0ms ease var(--transition-time);
+        transition:
+            transform ease var(var(--transition-time), var(--transition-time)),
+            opacity ease 0ms var(--transition-time);
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    &__link_active:before {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    &__contacts-shopping {
+        display: flex;
+        column-gap: 24px;
+    }
+
+    &__contacts {
+        display: flex;
+        column-gap: 4px;
+        position: relative;
+        transition: text-shadow var(--transition-time);
+    }
+
+    &__contacts-icon {
+        font-size: 20px;
+        transform: rotate(90deg);
+    }
+
+    &__contacts-link {
+        position: absolute;
+        inset: 0;
+    }
+
+    &__shopping {
+        column-gap: 4px;
+        display: flex;
+        position: relative;
+        transition: text-shadow var(--transition-time);
+    }
+
+    &__shopping-icon {
+        font-size: 20px;
+    }
+
+    &__shopping-link {
+        position: absolute;
+        inset: 0;
+    }
+
+    &__theme {
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    &__burger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: var(--main-color);
+        padding: 8px;
+    }
+}
+
+@media (hover: hover) {
+    .header__contacts:hover .header__contacts-icon {
+        animation: trigger-phone var(--transition-time) ease-in-out;
+    }
+
+    .header__contacts:hover {
+        text-shadow: var(--main-color-text-shadow);
+    }
+
+    .header__shopping:hover {
+        text-shadow: var(--main-color-text-shadow);
+    }
+
+    .header__theme:hover {
+        text-shadow: var(--main-color-text-shadow);
+    }
+
+    .header__nav-link:hover:before {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .header__nav-link:hover ~ .header__nav-link:before {
+        transform: translateX(-100%);
+    }
+
+    .header__nav:hover .header__nav-link:hover:before {
+        transition-delay: 0ms, 0ms;
+    }
+}
+
+@keyframes trigger-phone {
+    25% {
+        transform: rotate(80deg);
+    }
+    50% {
+        transform: rotate(110deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 1200px) {
+    .header {
+        &__burger {
+            display: block;
+        }
+
+        &__nav {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: var(--background-color);
+            padding: 80px 20px 20px;
+            transition: left var(--transition-time) ease;
+            z-index: 20;
+
+            &_active {
+                left: 0;
+            }
+        }
+
+        &__nav-list {
+            flex-direction: column;
+            row-gap: 20px;
+            height: auto;
+        }
+
+        &__nav-link {
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header__contacts-shopping {
+        column-gap: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .header__contacts {
+        display: none;
+    }
+}

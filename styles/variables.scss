@@ -1,0 +1,10 @@
+:root {
+    --main-color-value: 17, 17, 17;
+    --main-color: rgb(var(--main-color-value));
+    --inverse-main-color: rgb(255, 255, 255);
+    --light-main-color: rgb(var(--main-color-value), 0.7);
+    --decorative-line-color: rgba(111, 131, 110, 0.4);
+    --transition-time: 0.3s;
+
+    --main-color-text-shadow: 0.1px 0.1px 0.1px rgb(var(--main-color-value));
+}
