@@ -1,7 +1,7 @@
 @import '~reset-css/reset.css';
 @import './variables.scss';
 @import './components/header.scss';
-
+@import './components/footer.scss';
 *,
 *::before,
 *::after {
@@ -18,6 +18,10 @@ body {
     line-height: 24px;
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+main {
+    padding: 50px 0px;
 }
 
 a {
@@ -47,8 +51,27 @@ button {
     width: 100%;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 10px;
     }
 }
+
+// z-index
+// header menu - 15
+
+// git add .
+// git stash save "my-changes"
+// git stash pop
