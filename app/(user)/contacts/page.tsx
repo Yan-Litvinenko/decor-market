@@ -1,6 +1,6 @@
 import ContactsMap from '@/components/contactsMap/ContactsMap';
 
-export default function Contacts() {
+export default function Contacts(): React.JSX.Element {
     return (
         <div className="contacts">
             <div className="container">
