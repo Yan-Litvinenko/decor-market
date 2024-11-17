@@ -19,10 +19,6 @@
         &-item {
             text-align: center;
         }
-
-        &-link {
-            transition: var(--transition-time);
-        }
     }
 
     &__disclaimer {
@@ -52,10 +48,6 @@
 }
 
 @media (hover: hover) {
-    .footer__contacts-link:hover {
-        text-shadow: var(--main-color-text-shadow);
-    }
-
     .footer__information-link:hover {
         text-shadow: var(--main-color-text-shadow);
     }

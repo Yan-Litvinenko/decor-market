@@ -2,6 +2,8 @@
 @import './variables.scss';
 @import './components/header.scss';
 @import './components/footer.scss';
+@import './components/contacts.scss';
+@import './components/contactsComponents.scss';
 @import './components/phone.scss';
 
 *,
@@ -57,6 +59,7 @@ button {
     font-size: 32px;
     line-height: 40px;
     font-weight: 700;
+    margin-bottom: 24px;
 }
 
 .visually-hidden {

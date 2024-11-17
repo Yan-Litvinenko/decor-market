@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { PhoneOutlined } from '@ant-design/icons';
 
-export default function PhoneNumber(): React.JSX.Element {
+export default function ContactsPhone(): React.JSX.Element {
     return (
         <div className="phone">
             <PhoneOutlined className="phone__icon" />

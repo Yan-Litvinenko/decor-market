@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import PhoneNumber from '../phoneNumber/PhoneNumber';
+import ContactsPhone from '../contactsPhone/ContactsPhone';
 import { ShoppingCartOutlined, SunOutlined, MenuOutlined } from '@ant-design/icons';
 
 export default function Header(): React.JSX.Element {
@@ -8,7 +8,7 @@ export default function Header(): React.JSX.Element {
             <div className="container">
                 <div className="header__inner">
                     <h2 className="visually-hidden">Меню</h2>
-                    <button className="header__burger" aria-label="Открыть меню" aria-expanded>
+                    <button className="header__burger" type="button" aria-label="Открыть меню" aria-expanded>
                         <MenuOutlined />
                     </button>
 
@@ -20,22 +20,22 @@ export default function Header(): React.JSX.Element {
                                 </Link>
                             </li>
                             <li className="header__nav-item" aria-label="Карнизы">
-                                <Link className="header__nav-link" href="#" aria-current="page">
+                                <Link className="header__nav-link" href="/" aria-current="page">
                                     Карнизы
                                 </Link>
                             </li>
                             <li className="header__nav-item" aria-label="Рольшторы">
-                                <Link className="header__nav-link" href="#" aria-current="page">
+                                <Link className="header__nav-link" href="/" aria-current="page">
                                     Рольшторы
                                 </Link>
                             </li>
                             <li className="header__nav-item" aria-label="Плинтус">
-                                <Link className="header__nav-link" href="#" aria-current="page">
+                                <Link className="header__nav-link" href="/" aria-current="page">
                                     Плинтус
                                 </Link>
                             </li>
                             <li className="header__nav-item" aria-label="Пороги">
-                                <Link className="header__nav-link" href="#" aria-current="page">
+                                <Link className="header__nav-link" href="/" aria-current="page">
                                     Пороги
                                 </Link>
                             </li>
@@ -45,7 +45,7 @@ export default function Header(): React.JSX.Element {
                                 </Link>
                             </li>
                             <li className="header__nav-item" aria-label="О нас">
-                                <Link className="header__nav-link" href="#" aria-current="page">
+                                <Link className="header__nav-link" href="/about" aria-current="page">
                                     О нас
                                 </Link>
                             </li>
@@ -53,7 +53,7 @@ export default function Header(): React.JSX.Element {
                     </nav>
 
                     <div className="header__contacts-shopping">
-                        <PhoneNumber />
+                        <ContactsPhone />
                         <div className="header__shopping">
                             <span>Мой заказ</span>
                             <ShoppingCartOutlined className="header__shopping-icon" />

@@ -1,0 +1,9 @@
+.contacts-address a {
+    transition: var(--transition-time);
+}
+
+@media (hover: hover) {
+    .contacts-address:hover a {
+        text-shadow: var(--main-color-text-shadow);
+    }
+}
