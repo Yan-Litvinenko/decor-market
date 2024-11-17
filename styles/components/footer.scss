@@ -23,10 +23,6 @@
         &-link {
             transition: var(--transition-time);
         }
-
-        &-link--phone {
-            white-space: nowrap;
-        }
     }
 
     &__disclaimer {
@@ -65,7 +61,7 @@
     }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 980px) {
     .footer__contacts-list {
         justify-content: center;
     }

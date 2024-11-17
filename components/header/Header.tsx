@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { PhoneOutlined, ShoppingCartOutlined, SunOutlined, MenuOutlined } from '@ant-design/icons';
+import PhoneNumber from '../phoneNumber/PhoneNumber';
+import { ShoppingCartOutlined, SunOutlined, MenuOutlined } from '@ant-design/icons';
 
 export default function Header(): React.JSX.Element {
     return (
@@ -14,7 +15,7 @@ export default function Header(): React.JSX.Element {
                     <nav className={`header__nav ${false ? 'header__nav_active' : ''}`} aria-label="Меню">
                         <ul className="header__nav-list" aria-label="Список пунктов меню">
                             <li className="header__nav-item" aria-label="Главная страница">
-                                <Link className="header__nav-link" href="#" aria-current="page">
+                                <Link className="header__nav-link" href="/" aria-current="page">
                                     Главная
                                 </Link>
                             </li>
@@ -39,7 +40,7 @@ export default function Header(): React.JSX.Element {
                                 </Link>
                             </li>
                             <li className="header__nav-item" aria-label="Контакты">
-                                <Link className="header__nav-link" href="#" aria-current="page">
+                                <Link className="header__nav-link" href="/contacts" aria-current="page">
                                     Контакты
                                 </Link>
                             </li>
@@ -52,15 +53,7 @@ export default function Header(): React.JSX.Element {
                     </nav>
 
                     <div className="header__contacts-shopping">
-                        <address className="header__contacts">
-                            <PhoneOutlined className="header__contacts-icon" />
-                            +375 (29) 624-30-85
-                            <Link
-                                className="header__contacts-link"
-                                href="tel:+79219219219"
-                                aria-label="Позвонить по телефону +375 (29) 624-30-85"
-                            />
-                        </address>
+                        <PhoneNumber />
                         <div className="header__shopping">
                             <span>Мой заказ</span>
                             <ShoppingCartOutlined className="header__shopping-icon" />

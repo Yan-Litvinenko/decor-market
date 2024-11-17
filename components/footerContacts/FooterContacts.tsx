@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PhoneNumber from '../phoneNumber/PhoneNumber';
 
 export default function FooterContacts(): React.JSX.Element {
     return (
@@ -6,13 +7,7 @@ export default function FooterContacts(): React.JSX.Element {
             <h2 className="visually-hidden">Контакты</h2>
             <ul className="footer__contacts-list">
                 <li className="footer__contacts-item">
-                    <Link
-                        className="footer__contacts-link footer__contacts-link--phone"
-                        href={`tel:+375296243085`}
-                        aria-label="Позвонить по телефону +375 (29) 624-30-85"
-                    >
-                        +375 (29) 624-30-85
-                    </Link>
+                    <PhoneNumber />
                 </li>
                 <li className="footer__contacts-item">
                     <address className="footer__contacts-address">

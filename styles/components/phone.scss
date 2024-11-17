@@ -1,0 +1,42 @@
+.phone {
+    display: flex;
+    gap: 4px;
+    position: relative;
+    transition: text-shadow var(--transition-time);
+    white-space: nowrap;
+
+    &__icon {
+        font-size: 20px;
+        transform: rotate(90deg) translateX(2px);
+        width: 20px;
+        height: 20px;
+    }
+
+    &__link {
+        position: absolute;
+        inset: 0;
+    }
+}
+
+@media (hover: hover) {
+    .phone:hover .phone__icon {
+        animation: trigger-phone var(--transition-time) ease-in-out;
+    }
+
+    .phone:hover {
+        text-shadow: var(--main-color-text-shadow);
+    }
+}
+
+@keyframes trigger-phone {
+    25% {
+        transform: rotate(80deg);
+    }
+    50% {
+        transform: rotate(110deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}

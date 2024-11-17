@@ -2,6 +2,8 @@
 @import './variables.scss';
 @import './components/header.scss';
 @import './components/footer.scss';
+@import './components/phone.scss';
+
 *,
 *::before,
 *::after {
@@ -49,6 +51,12 @@ button {
     max-width: 1440px;
     padding: 0 20px;
     width: 100%;
+}
+
+.title {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
 }
 
 .visually-hidden {
