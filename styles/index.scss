@@ -1,10 +1,11 @@
 @import '~reset-css/reset.css';
 @import './variables.scss';
 @import './components/header.scss';
-@import './components/footer.scss';
+@import './components/phone.scss';
 @import './components/contacts.scss';
 @import './components/contactsComponents.scss';
-@import './components/phone.scss';
+@import './components/navigation.scss';
+@import './components/footer.scss';
 
 *,
 *::before,
@@ -77,6 +78,10 @@ button {
 @media (max-width: 768px) {
     .container {
         padding: 0 10px;
+    }
+
+    main {
+        padding: 20px 0px 50px;
     }
 }
 

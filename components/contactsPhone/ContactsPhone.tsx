@@ -1,16 +1,15 @@
 import Link from 'next/link';
 import { PhoneOutlined } from '@ant-design/icons';
+import { CONTACTS } from '@/constants/contacts';
 
 export default function ContactsPhone(): React.JSX.Element {
+    const { visual, number } = CONTACTS.phone;
+
     return (
         <div className="phone">
             <PhoneOutlined className="phone__icon" />
-            +375 (29) 624-30-85
-            <Link
-                className="phone__link"
-                href="tel:+375296243085"
-                aria-label="Позвонить по телефону +375 (29) 624-30-85"
-            />
+            {visual}
+            <Link className="phone__link" href={`tel:+${number}`} aria-label={`Позвонить по телефону ${visual}`} />
         </div>
     );
 }
