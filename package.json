@@ -8,12 +8,13 @@
         "start": "next start",
         "lint-staged": "lint-staged",
         "lint": "next lint",
+        "format": "prettier --write .",
         "prepare": "husky"
     },
     "lint-staged": {
         "*.{ts,tsx}": [
-            "eslint --fix",
-            "prettier --write"
+            "prettier --write",
+            "eslint --fix"
         ]
     },
     "dependencies": {
