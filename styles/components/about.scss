@@ -1,0 +1,21 @@
+.about {
+    &__content {
+        box-shadow: var(--box-shadow);
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        row-gap: 24px;
+    }
+
+    &__list-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+}

@@ -5,7 +5,7 @@ import ContactsPhone from '@/components/contactsPhone/ContactsPhone';
 
 export default function Contacts(): React.JSX.Element {
     return (
-        <div className="contacts">
+        <section className="contacts">
             <div className="container">
                 <div className="contacts__inner">
                     <h1 className="contacts__title title" aria-label="Контакты">
@@ -26,10 +26,11 @@ export default function Contacts(): React.JSX.Element {
                                 <ContactsAddress />
                             </li>
                         </ul>
+
                         <ContactsMap />
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

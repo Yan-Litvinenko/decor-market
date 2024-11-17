@@ -1,7 +1,7 @@
-import type { Contacts } from '@/types/constants.interface';
+import type { Contacts } from '@/types/Constants.interface';
 
 export const CONTACTS: Contacts = {
-    address: 'г. Могилёв, Быховская улица 6, 150 ролет',
+    address: 'г.Могилёв, Быховская улица 6, 150 ролет',
     mode: {
         time: 'c 9:00 до 15:00',
         dayOff: 'ПН выходной',
