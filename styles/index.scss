@@ -1,5 +1,7 @@
 @import '~reset-css/reset.css';
 @import './variables.scss';
+@import './fonts.scss';
+
 @import './components/header.scss';
 @import './components/phone.scss';
 @import './components/contacts.scss';
@@ -18,7 +20,8 @@
 body {
     background-color: var(--inverse-text-color);
     color: var(--main-text-color);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat, sans-serif;
+
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 1px;

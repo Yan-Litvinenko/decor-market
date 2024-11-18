@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import ContactsPhone from '../contactsPhone/ContactsPhone';
 import Navigation from '../navigation/Navigation';
-import { ShoppingCartOutlined, SunOutlined, MenuOutlined } from '@ant-design/icons';
+import { ShoppingCartOutlined, MenuOutlined } from '@ant-design/icons';
 
 export default function Header(): React.JSX.Element {
     return (
@@ -18,12 +18,9 @@ export default function Header(): React.JSX.Element {
                     <div className="header__contacts-shopping">
                         <ContactsPhone />
                         <div className="header__shopping">
-                            <span>Мой заказ</span>
+                            <span>Заказ</span>
                             <ShoppingCartOutlined className="header__shopping-icon" />
                             <Link className="header__shopping-link" href="/" aria-label="Перейти в корзину" />
-                        </div>
-                        <div className="header__theme">
-                            <SunOutlined className="header__theme-icon" aria-label="Переключить тему" />
                         </div>
                     </div>
                 </div>
