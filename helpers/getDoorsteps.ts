@@ -1,4 +1,4 @@
-import { Doorstep } from '@/types/Doorstep.interface';
+import { Doorstep } from '@/types/doorstep.interface';
 
 export default async function getDoorsteps(): Promise<Doorstep[]> {
     try {

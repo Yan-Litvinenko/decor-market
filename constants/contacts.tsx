@@ -1,4 +1,4 @@
-import type { Contacts } from '@/types/Constants.interface';
+import type { Contacts } from '@/types/constants.interface';
 
 export const CONTACTS: Contacts = {
     address: 'г.Могилёв, Быховская улица 6, 150 ролет',
