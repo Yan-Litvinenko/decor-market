@@ -9,9 +9,9 @@ export default async function DoorstepPage(): Promise<React.JSX.Element> {
 
     return (
         <section>
-            <h1>Doorstep</h1>
-
-            <ProductCard />
+            {doorstepCollection.map((doorstep) => {
+                return <ProductCard key={doorstep._id.toString()} product={doorstep} />;
+            })}
         </section>
     );
 }
