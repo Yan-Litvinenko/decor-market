@@ -1,6 +1,6 @@
 import connectToDatabase from '@/db/mongodb';
-import { MongoClient } from 'mongodb';
 import { NextResponse } from 'next/server';
+import { type MongoClient } from 'mongodb';
 import type { DoorstepDatabase } from '@/types/server/doorstep.interface';
 import type { ProductField } from '@/types/server/product.interface';
 import type { DoorstepType } from '@/types/client/doorstep.interface';
@@ -16,24 +16,28 @@ export async function GET(): Promise<NextResponse> {
         const doorstepNamesCollection: Collection<ProductField<string>> = db.collection('doorstep_names');
         const doorstepLengthCollection: Collection<ProductField<number>> = db.collection('doorstep_lengths');
         const doorstepWidthCollection: Collection<ProductField<number>> = db.collection('doorstep_widths');
+        const countryOfOriginCollection: Collection<ProductField<number>> = db.collection('country_of_origin');
+        const firmCollection: Collection<ProductField<number>> = db.collection('firm');
 
         const doorsteps: DoorstepDatabase[] = await doorstepCollection.find().toArray();
         const colors: ProductField<string>[] = await doorstepColorCollection.find().toArray();
         const names: ProductField<string>[] = await doorstepNamesCollection.find().toArray();
         const lengths: ProductField<number>[] = await doorstepLengthCollection.find().toArray();
         const widths: ProductField<number>[] = await doorstepWidthCollection.find().toArray();
+        const countryOfOrigins: ProductField<number>[] = await countryOfOriginCollection.find().toArray();
+        const firms: ProductField<number>[] = await firmCollection.find().toArray();
 
         const result = doorsteps.map((doorstep) => {
             return {
                 ...doorstep,
-                color: colors.find((color) => color.id === doorstep.color) as ProductField<string>,
-                name: names.find((name) => name.id === doorstep.name) as ProductField<string>,
-                length: lengths.find((length) => length.id === doorstep.length) as ProductField<number>,
-                width: widths.find((width) => width.id === doorstep.width) as ProductField<number>,
+                color: colors.find((color) => color.id === doorstep.color),
+                name: names.find((name) => name.id === doorstep.name),
+                length: lengths.find((length) => length.id === doorstep.length),
+                width: widths.find((width) => width.id === doorstep.width),
+                country_of_origin: countryOfOrigins.find((country) => country.id === doorstep.country_of_origin),
+                firm: firms.find((firm) => firm.id === doorstep.firm),
             };
         }) as DoorstepType[];
-
-        console.log(`result: ${JSON.stringify(result)}`);
 
         return NextResponse.json(result);
     } catch (error) {

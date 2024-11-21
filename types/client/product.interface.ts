@@ -1,6 +1,8 @@
 import type { ObjectId } from 'mongodb';
 
-export type Product = {
+export type ProductType = 'doorstep';
+
+export interface Product {
     _id: ObjectId;
     id: number;
     name: ProductField<string>;
@@ -8,7 +10,9 @@ export type Product = {
     length: ProductField<number>;
     width: ProductField<number>;
     price: number;
-};
+    country_of_origin: ProductField<number>;
+    firm: ProductField<number>;
+}
 
 export type ProductField<T> = {
     _id: ObjectId;

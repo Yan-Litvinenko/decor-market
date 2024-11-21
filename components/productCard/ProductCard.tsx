@@ -1,16 +1,27 @@
-export default function ProductCard(): React.JSX.Element {
+import getPriceCurrency from '@/helpers/getpriceCurrency';
+import type { Product } from '@/types/client/product.interface';
+
+type ProductCardProps<T> = {
+    product: T;
+};
+
+export default function ProductCard<T extends Product>({ product }: ProductCardProps<T>): React.JSX.Element {
+    if (!product) return <></>;
+
+    const { name, color, length, width, price } = product;
+
     return (
         <article className="product-card">
             <div className="product-card__box-image">
                 {/* <Image className="product-card__image" src={productTestImage} alt="product" /> */}
             </div>
             <section className="product-card__info">
-                <h3 className="product-card__title">Название товара</h3>
+                <h3 className="product-card__title">{name.value}</h3>
                 <section className="product-card__description">
-                    <p>Цена: 1000 BYN</p>
-                    <p>Цвет: Белый</p>
-                    <p>Ширина: 100 см</p>
-                    <p>Высота: 100 см</p>
+                    <p>Цена: {getPriceCurrency(price)}</p>
+                    <p>Цвет: {color.value}</p>
+                    <p>Ширина: {width.value} см</p>
+                    <p>Высота: {length.value} см</p>
                 </section>
                 <div className="product-card__box-buttons">
                     <button className="product-card__button" type="button">

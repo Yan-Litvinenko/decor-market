@@ -10,6 +10,8 @@ export type ProductDatabase = {
     length: IDValueField;
     width: IDValueField;
     price: number;
+    country_of_origin: IDValueField;
+    firm: IDValueField;
 };
 
 export type ProductField<T> = {
