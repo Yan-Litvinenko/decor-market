@@ -1,0 +1,23 @@
+:root {
+    --main-color-value: 112, 48, 160;
+    --main-color: rgb(var(--main-color-value));
+    --main-color-light: rgb(var(--main-color-value), 0.7);
+    --main-color-text-shadow: 0.1px 0.1px 0.1px rgb(var(--main-color-value));
+
+    --secondary-color-value: 255, 153, 255;
+    --secondary-color: rgb(var(--secondary-color-value));
+    --secondary-color-light: rgb(var(--secondary-color-value), 0.7);
+    --secondary-color-text-shadow: 0.1px 0.1px 0.1px rgb(var(--secondary-color-value));
+
+    --dark-text-color: rgb(30, 30, 30);
+    --dark-text-shadow: 0.1px 0.1px 0.1px rgb(30, 30, 30);
+    --light-text-color: rgb(255, 255, 255);
+    --light-text-shadow: 0.4px 0.4px 0.4px rgb(255, 255, 255);
+
+    --box-shadow-main-color: 0 4px 32px 0 rgba(var(--main-color-value), 0.12);
+    --box-shadow-card-product: 0 4px 42px 0 rgba(var(--main-color-value), 0.2);
+
+    --decorative-light-line-color: rgba(255, 255, 255, 0.651);
+    --decorative-dark-line-color: rgba(30, 30, 30, 0.1);
+    --transition-time: 0.3s;
+}

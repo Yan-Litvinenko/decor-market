@@ -1,0 +1,25 @@
+.contacts-address a {
+    transition: var(--transition-time);
+}
+
+.phone {
+    transition: text-shadow var(--transition-time);
+
+    &__icon {
+        transition: filter var(--transition-time);
+    }
+}
+
+@media (hover: hover) {
+    .contacts-address:hover a {
+        text-shadow: var(--light-text-shadow);
+    }
+
+    .phone:hover {
+        text-shadow: var(--light-text-shadow);
+    }
+
+    .phone:hover .phone__icon {
+        filter: drop-shadow(0px 0px 1px var(--light-text-color));
+    }
+}

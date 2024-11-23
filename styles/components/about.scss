@@ -1,0 +1,10 @@
+.about {
+    &__content {
+        box-shadow: var(--box-shadow-main-color);
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        row-gap: 24px;
+    }
+}

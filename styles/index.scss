@@ -1,0 +1,101 @@
+@import '~reset-css/reset.css';
+@import './variables.scss';
+@import './mixin.scss';
+@import './fonts.scss';
+
+@import './components/header.scss';
+@import './components/phone.scss';
+@import './components/contacts.scss';
+@import './components/contactsComponents.scss';
+@import './components/navigation.scss';
+@import './components/footer.scss';
+
+@import './components/about.scss';
+
+@import './components/productCard.scss';
+@import './components/productCardDetails.scss';
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--inverse-text-color);
+    color: var(--main-text-color);
+    font-family: Montserrat, sans-serif;
+
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 24px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    padding: 50px 0px;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    outline: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.title {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    main {
+        padding: 20px 0px 50px;
+    }
+}
+
+// z-index
+// header menu - 15
+
+// git add .
+// git stash save "my-changes"
+// git stash pop
