@@ -3,17 +3,21 @@
 @import './mixin.scss';
 @import './fonts.scss';
 
-@import './components/header.scss';
-@import './components/phone.scss';
 @import './components/contacts.scss';
-@import './components/contactsComponents.scss';
-@import './components/navigation.scss';
-@import './components/footer.scss';
-
 @import './components/about.scss';
 
+@import './components/header.scss';
+@import './components/phone.scss';
+@import './components/navigation.scss';
+@import './components/footer.scss';
+@import './components/loader.scss';
+@import './components/inStockSign.scss';
+
+@import './components/contactsComponents.scss';
 @import './components/productCard.scss';
 @import './components/productCardDetails.scss';
+@import './components/productControls.scss';
+
 *,
 *::before,
 *::after {

@@ -56,9 +56,9 @@ export default function ProductCardDetails(): React.JSX.Element {
                 <div className="product-card-details__info">
                     <ul className="product-card-details__list">
                         <li className="product-card-details__item">
-                            Длина: {unitConversionToMeters(length.value, 'cm')}
+                            Длина: {unitConversionToMeters(length.value, 'cm')}м.
                         </li>
-                        <li className="product-card-details__item">Ширина: {width.value}</li>
+                        <li className="product-card-details__item">Ширина: {width.value}см.</li>
                         <li className="product-card-details__item">Страна производитель: {country_of_origin.value}</li>
                         <li className="product-card-details__item">Фирма: {firm.value}</li>
                         <li className="product-card-details__item">Материал: {material.value}</li>

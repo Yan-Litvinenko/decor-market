@@ -1,0 +1,20 @@
+.in-stock-sign {
+    align-items: center;
+    border-radius: 16px;
+    color: var(--light-text-color);
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    line-height: 18px;
+    width: max-content;
+    padding: 8px 16px;
+    z-index: 5;
+}
+
+.in-stock-sign--in-stock {
+    background-color: var(--secondary-color);
+}
+
+.in-stock-sign--not-in-stock {
+    background-color: rgb(235 235 235);
+}

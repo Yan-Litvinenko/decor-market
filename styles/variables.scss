@@ -19,5 +19,11 @@
 
     --decorative-light-line-color: rgba(255, 255, 255, 0.651);
     --decorative-dark-line-color: rgba(30, 30, 30, 0.1);
+    --decorative-gradient-line-color: linear-gradient(
+        to right,
+        transparent,
+        rgba(var(--main-color-value), 0.5),
+        transparent
+    );
     --transition-time: 0.3s;
 }

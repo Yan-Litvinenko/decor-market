@@ -2,6 +2,7 @@
 
 import Base64Image from '@/components/base64Image/Base64Image';
 import getPriceCurrency from '@/helpers/getPriceCurrency';
+import ProductControls from '@/components/productControls/ProductControls';
 import Link from 'next/link';
 import { setProductDetail } from '@/redux/slice/productDetailSlice';
 import { unitConversionToMeters } from '@/helpers/productSizeConversion';
@@ -24,6 +25,7 @@ export default function ProductCard({ product, page }: ProductCardProps): React.
 
     return (
         <article className="product-card">
+            <ProductControls isInStock={true} />
             <div className="product-card__box-image">
                 <Base64Image className="product-card__image" base64string={product.images[0]} alt={name} />
             </div>

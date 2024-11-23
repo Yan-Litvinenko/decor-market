@@ -1,0 +1,10 @@
+.loader {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: calc(100vh - 462px);
+
+    & svg {
+        fill: var(--secondary-color);
+    }
+}
