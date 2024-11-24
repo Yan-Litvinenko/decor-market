@@ -6,6 +6,7 @@
 // pages
 @import './components/contacts.scss';
 @import './components/about.scss';
+@import './components/favorite.scss';
 
 // general components
 @import './components/header.scss';
@@ -43,6 +44,7 @@ body {
 
 main {
     padding: 50px 0px;
+    min-height: calc(100vh - 362px);
 }
 
 a {

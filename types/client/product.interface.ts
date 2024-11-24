@@ -1,7 +1,7 @@
 import type { ObjectId } from 'mongodb';
 import type { ProductThresholds } from './thresholds.interface';
 
-export type ProductType = 'doorstep';
+export type ProductType = 'thresholds';
 export type ProductName = 'Порог';
 export type ProductMaterial = 'алюминий';
 export type AllProducts = ProductThresholds;

@@ -2,7 +2,7 @@ type InStockSignProps = {
     isInStock: boolean;
 };
 
-export default function InStockSign({ isInStock }: InStockSignProps) {
+export default function InStockSign({ isInStock }: InStockSignProps): React.JSX.Element {
     return isInStock ? (
         <div className="in-stock-sign in-stock-sign--in-stock">В наличии</div>
     ) : (

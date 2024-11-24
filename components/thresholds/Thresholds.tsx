@@ -16,15 +16,16 @@ export default function Thresholds(): React.JSX.Element {
             .finally(() => setIsLoading(false));
     }, []);
 
+    if (isLoading) {
+        return <Loader />;
+    }
+
     return (
         <>
-            {isLoading ? (
-                <Loader />
-            ) : (
-                thresholdsCollection.map((threshold) => {
-                    return <ProductCard key={threshold._id.toString()} product={threshold} page="/thresholds" />;
-                })
-            )}
+            {thresholdsCollection.map((threshold) => {
+                return <ProductCard key={threshold._id.toString()} product={threshold} page={threshold.type} />;
+            })}
+            ;
         </>
     );
 }

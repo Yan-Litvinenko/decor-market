@@ -2,6 +2,7 @@
 
 import React from 'react';
 import getPriceCurrency from '@/helpers/getPriceCurrency';
+import Image from 'next/image';
 import { unitConversionToMeters } from '@/helpers/productSizeConversion';
 import { useAppSelector } from '@/hooks/useAppRedux';
 import type { AllProducts, ProductType } from '@/types/client/product.interface';
@@ -13,9 +14,9 @@ export default function ProductCardDetails(): React.JSX.Element {
 
     const { name, color, length, width, price, country_of_origin, firm, material, images, type } = productDetail;
 
-    const renderAdditionalFields = (productType: ProductType) => {
+    const renderAdditionalFields = (productType: ProductType): React.JSX.Element | null => {
         switch (productType) {
-            case 'doorstep':
+            case 'thresholds':
                 return (
                     <>
                         <li className="product-card-details__item">
@@ -37,7 +38,7 @@ export default function ProductCardDetails(): React.JSX.Element {
                 );
 
             default:
-                break;
+                return null;
         }
     };
 
@@ -48,13 +49,16 @@ export default function ProductCardDetails(): React.JSX.Element {
                     <h1 className="product-card-details__title">
                         {name}, {color.value}, {getPriceCurrency(price)}
                     </h1>
-                    <img src={images[0]} alt={productDetail.type} />
+                    <Image src={images[0]} alt={productDetail.type} />
                     <button className="product-card-details__button" type="button">
                         Добавить в заказ
                     </button>
                 </aside>
                 <div className="product-card-details__info">
                     <ul className="product-card-details__list">
+                        <li className="product-card-details__item">Название: {name}</li>
+                        <li className="product-card-details__item">Цвет: {color.value}</li>
+                        <li className="product-card-details__item">Цена: {getPriceCurrency(price)}</li>
                         <li className="product-card-details__item">
                             Длина: {unitConversionToMeters(length.value, 'cm')}м.
                         </li>

@@ -7,25 +7,26 @@ import Link from 'next/link';
 import { setProductDetail } from '@/redux/slice/productDetailSlice';
 import { unitConversionToMeters } from '@/helpers/productSizeConversion';
 import { useAppDispatch } from '@/hooks/useAppRedux';
-import type { AllProducts } from '@/types/client/product.interface';
-import type { RootPage } from '@/types/client/index.interface';
+import type { AllProducts, ProductType } from '@/types/client/product.interface';
 
 type ProductCardProps = {
     product: AllProducts;
-    page: RootPage;
+    page: ProductType;
 };
 
-export default function ProductCard({ product, page }: ProductCardProps): React.JSX.Element {
-    if (!product) return <></>;
+export default function ProductCard({ product, page }: ProductCardProps): React.JSX.Element | null {
+    const dispatch = useAppDispatch();
+
+    if (!product) return null;
 
     const { name, color, length, width, price } = product;
-
-    const dispatch = useAppDispatch();
-    const handleDetail = () => dispatch(setProductDetail(product));
+    const handleDetail = (): void => {
+        dispatch(setProductDetail(product));
+    };
 
     return (
         <article className="product-card">
-            <ProductControls isInStock={true} />
+            <ProductControls isInStock product={product} />
             <div className="product-card__box-image">
                 <Base64Image className="product-card__image" base64string={product.images[0]} alt={name} />
             </div>

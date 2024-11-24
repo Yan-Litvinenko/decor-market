@@ -45,6 +45,27 @@
         cursor: pointer;
         position: relative;
 
+        &-count {
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            color: var(--light-text-color);
+            position: absolute;
+            right: -10px;
+            top: -3px;
+            height: 16px;
+            width: 16px;
+            z-index: 1;
+
+            &::before {
+                content: attr(data-count);
+                font-size: 10px;
+                position: absolute;
+                left: calc(50% + 0.5px);
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
         &-icon {
             display: block;
             font-size: 20px;
@@ -63,6 +84,7 @@
         &-link {
             position: absolute;
             inset: 0;
+            z-index: 2;
         }
     }
 
