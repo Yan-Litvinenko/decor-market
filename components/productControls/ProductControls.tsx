@@ -1,5 +1,5 @@
-import InStockSign from '../inStockSign/InStockSign';
-import { HeartOutlined } from '@ant-design/icons';
+import InStockSign from '@/components/inStockSign/InStockSign';
+import ProductFavorite from '@/components/productFavorite/ProductFavorite';
 
 type ProductControlsProps = {
     isInStock: boolean;
@@ -9,7 +9,7 @@ export default function ProductControls({ isInStock }: ProductControlsProps): Re
     return (
         <div className="product-controls">
             <InStockSign isInStock={isInStock} />
-            <HeartOutlined className="product-controls__heart" />
+            <ProductFavorite />
         </div>
     );
 }

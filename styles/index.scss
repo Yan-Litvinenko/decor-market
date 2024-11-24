@@ -3,9 +3,11 @@
 @import './mixin.scss';
 @import './fonts.scss';
 
+// pages
 @import './components/contacts.scss';
 @import './components/about.scss';
 
+// general components
 @import './components/header.scss';
 @import './components/phone.scss';
 @import './components/navigation.scss';
@@ -13,10 +15,12 @@
 @import './components/loader.scss';
 @import './components/inStockSign.scss';
 
+// product
 @import './components/contactsComponents.scss';
 @import './components/productCard.scss';
 @import './components/productCardDetails.scss';
 @import './components/productControls.scss';
+@import './components/productFavorite.scss';
 
 *,
 *::before,

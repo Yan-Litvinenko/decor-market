@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import useActiveLink from '@/hooks/useActiveLink';
 import type { RootPage } from '@/types/client/index.interface';
 
 type NavigationItem = {
@@ -12,7 +12,8 @@ type NavigationItem = {
 };
 
 export default function Navigation(): React.JSX.Element {
-    const pathname: string = usePathname();
+    const isActiveLink = useActiveLink();
+
     const pages: NavigationItem[] = [
         {
             key: 'navigation-main',
@@ -59,7 +60,7 @@ export default function Navigation(): React.JSX.Element {
                     return (
                         <li className="nav__item" key={key} aria-label={ariaLabel}>
                             <Link
-                                className={`nav__link ${pathname === href ? 'nav__link-active' : ''}`}
+                                className={`nav__link ${isActiveLink(href) ? 'nav__link-active' : ''}`}
                                 href={href}
                                 aria-current="page"
                             >
