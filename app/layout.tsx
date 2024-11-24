@@ -1,4 +1,5 @@
 import ReduxProvider from '@/hoc/ReduxProvider';
+import { NotificationProvider } from '@/hoc/NotificationProvider';
 import '@/styles/index.scss';
 
 export const metadata = {
@@ -10,7 +11,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
     return (
         <html lang="en">
             <body>
-                <ReduxProvider>{children}</ReduxProvider>
+                <NotificationProvider>
+                    <ReduxProvider>{children}</ReduxProvider>
+                </NotificationProvider>
             </body>
         </html>
     );
