@@ -1,13 +1,13 @@
-import { Circles } from 'react-loader-spinner';
+import { Hourglass } from 'react-loader-spinner';
 
 export default function Loader(): React.JSX.Element {
     return (
         <div className="loader">
-            <Circles
-                visible={true}
+            <Hourglass
+                visible
                 height="100"
                 width="100"
-                color="#4fa94d"
+                colors={['#7030a0', '#ff99ff']}
                 ariaLabel="rings-loading"
                 wrapperStyle={{}}
                 wrapperClass=""

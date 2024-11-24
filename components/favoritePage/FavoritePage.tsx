@@ -5,10 +5,10 @@ import { useAppSelector } from '@/hooks/useAppRedux';
 import type { RootState } from '@/redux/store';
 import type { AllProducts } from '@/types/client/product.interface';
 
-export default function FavoritePage(): React.JSX.Element | null {
+export default function FavoritePage(): React.JSX.Element {
     const favoriteList = useAppSelector((state: RootState) => state.favorite.favoriteList) as AllProducts[];
 
-    if (!favoriteList) return null;
+    if (!favoriteList.length) return <p>Список избранного пуст</p>;
 
     return (
         <>

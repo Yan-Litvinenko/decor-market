@@ -81,6 +81,12 @@ button {
     margin-bottom: 24px;
 }
 
+.button-deactive {
+    cursor: default;
+    pointer-events: none;
+    background-color: var(--secondary-color);
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;

@@ -15,6 +15,7 @@ export type ProductDatabase = {
     firm: IDValueField;
     images: string[];
     material: IDValueField;
+    in_stock_count: number;
 };
 
 export type ProductField<T> = {

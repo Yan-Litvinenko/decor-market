@@ -3,16 +3,19 @@
 import React from 'react';
 import getPriceCurrency from '@/helpers/getPriceCurrency';
 import Image from 'next/image';
+import useFavorite from '@/hooks/useFavorite';
 import { unitConversionToMeters } from '@/helpers/productSizeConversion';
 import { useAppSelector } from '@/hooks/useAppRedux';
 import type { AllProducts, ProductType } from '@/types/client/product.interface';
 
 export default function ProductCardDetails(): React.JSX.Element {
     const productDetail = useAppSelector((state) => state.productDetail.productDetail) as AllProducts;
+    const { isFavorite, setFavorite } = useFavorite(productDetail);
 
     if (!productDetail) return <>Нет данных о продукте</>;
 
-    const { name, color, length, width, price, country_of_origin, firm, material, images, type } = productDetail;
+    const { name, color, length, width, price, country_of_origin } = productDetail;
+    const { firm, material, images, type, in_stock_count } = productDetail;
 
     const renderAdditionalFields = (productType: ProductType): React.JSX.Element | null => {
         switch (productType) {
@@ -49,10 +52,24 @@ export default function ProductCardDetails(): React.JSX.Element {
                     <h1 className="product-card-details__title">
                         {name}, {color.value}, {getPriceCurrency(price)}
                     </h1>
-                    <Image src={images[0]} alt={productDetail.type} />
-                    <button className="product-card-details__button" type="button">
-                        Добавить в заказ
-                    </button>
+                    <Image src={images[0]} alt={productDetail.type} width={100} height={100} />
+
+                    <div className="product-card-details__buttons">
+                        <button className="product-card-details__button" type="button">
+                            Добавить в заказ
+                        </button>
+                        <button
+                            className={
+                                isFavorite()
+                                    ? 'product-card-details__button button-deactive'
+                                    : 'product-card-details__button'
+                            }
+                            type="button"
+                            onClick={() => (isFavorite() ? null : setFavorite())}
+                        >
+                            {isFavorite() ? 'В избранном' : 'Добавить в избранное'}
+                        </button>
+                    </div>
                 </aside>
                 <div className="product-card-details__info">
                     <ul className="product-card-details__list">
@@ -67,6 +84,7 @@ export default function ProductCardDetails(): React.JSX.Element {
                         <li className="product-card-details__item">Фирма: {firm.value}</li>
                         <li className="product-card-details__item">Материал: {material.value}</li>
                         {renderAdditionalFields(type)}
+                        <li className="product-card-details__item">В наличии: {in_stock_count} шт.</li>
                     </ul>
                 </div>
             </div>

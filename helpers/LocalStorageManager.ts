@@ -1,9 +1,12 @@
+import isClient from '@/helpers/isClient';
 import type { AllProducts } from '@/types/client/product.interface';
 
 class LocalStorageManager {
     private static readonly FAVORITE_LIST_KEY: string = process.env.NEXT_PUBLIC_LOCAL_STORAGE_FAVORITE_KEY!;
 
     static getFavoriteList(): AllProducts[] {
+        if (!isClient) return [];
+
         try {
             return JSON.parse(localStorage.getItem(this.FAVORITE_LIST_KEY) || '[]');
         } catch (error) {
@@ -12,6 +15,8 @@ class LocalStorageManager {
     }
 
     static setFavoriteList(favoriteList: AllProducts[]): void {
+        if (!isClient) return;
+
         try {
             localStorage.setItem(this.FAVORITE_LIST_KEY, JSON.stringify(favoriteList));
         } catch (error) {

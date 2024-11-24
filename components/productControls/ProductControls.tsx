@@ -3,14 +3,13 @@ import ProductFavorite from '@/components/productFavorite/ProductFavorite';
 import type { AllProducts } from '@/types/client/product.interface';
 
 type ProductControlsProps = {
-    isInStock: boolean;
     product: AllProducts;
 };
 
-export default function ProductControls({ isInStock, product }: ProductControlsProps): React.JSX.Element {
+export default function ProductControls({ product }: ProductControlsProps): React.JSX.Element {
     return (
         <div className="product-controls">
-            <InStockSign isInStock={isInStock} />
+            <InStockSign isInStock={product.in_stock_count > 0} />
             <ProductFavorite product={product} />
         </div>
     );

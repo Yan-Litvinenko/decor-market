@@ -19,6 +19,7 @@ export interface Product {
     firm: ProductField<number>;
     images: string[];
     material: ProductField<ProductMaterial>;
+    in_stock_count: number;
 }
 
 export type ProductField<T> = {

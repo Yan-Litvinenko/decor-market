@@ -26,7 +26,7 @@ export default function ProductCard({ product, page }: ProductCardProps): React.
 
     return (
         <article className="product-card">
-            <ProductControls isInStock product={product} />
+            <ProductControls product={product} />
             <div className="product-card__box-image">
                 <Base64Image className="product-card__image" base64string={product.images[0]} alt={name} />
             </div>
