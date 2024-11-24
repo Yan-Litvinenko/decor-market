@@ -4,7 +4,7 @@ import Thresholds from '@/components/thresholds/Thresholds';
 export default function ThresholdsPage(): React.JSX.Element {
     return (
         <div className="container">
-            <section>
+            <section className="thresholds">
                 <Thresholds />
             </section>
         </div>

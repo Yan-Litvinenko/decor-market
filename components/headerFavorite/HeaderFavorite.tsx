@@ -1,5 +1,6 @@
 'use client';
 
+import IS_CLIENT from '@/constants/isClient';
 import Link from 'next/link';
 import useActiveLink from '@/hooks/useActiveLink';
 import { useAppSelector } from '@/hooks/useAppRedux';
@@ -13,7 +14,7 @@ export default function HeaderFavorite(): React.JSX.Element {
 
     return (
         <div className="header__favorite">
-            <div className="header__favorite-count" data-count={favoriteList.length} />
+            <div className="header__favorite-count" data-count={IS_CLIENT ? favoriteList.length : 0} />
             {isActiveLink('/favorite') ? (
                 <HeartFilled className="header__favorite-icon" />
             ) : (

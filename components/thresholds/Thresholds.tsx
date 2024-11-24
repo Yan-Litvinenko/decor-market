@@ -25,7 +25,6 @@ export default function Thresholds(): React.JSX.Element {
             {thresholdsCollection.map((threshold) => {
                 return <ProductCard key={threshold._id.toString()} product={threshold} page={threshold.type} />;
             })}
-            ;
         </>
     );
 }

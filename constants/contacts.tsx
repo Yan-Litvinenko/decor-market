@@ -1,4 +1,4 @@
-import type { Contacts } from '@/types/constants.interface';
+import type { Contacts } from '@/types/client/constants.interface';
 
 export const CONTACTS: Contacts = {
     address: 'г.Могилёв, Быховская улица 6, 150 ролет',
@@ -11,4 +11,4 @@ export const CONTACTS: Contacts = {
         visual: '+375 (29) 624-30-85',
         number: 375296243085,
     },
-};
+} as const;
